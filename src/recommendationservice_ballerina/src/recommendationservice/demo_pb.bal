@@ -646,34 +646,34 @@ public type AdServiceClient client object {
 };
 
 public type CartItem record {|
-    string product_id;
-    int quantity;
+    string product_id = "";
+    int quantity = 0;
     
 |};
 
 
 public type AddItemRequest record {|
-    string user_id;
-    CartItem item;
+    string user_id = "";
+    CartItem? item;
     
 |};
 
 
 public type EmptyCartRequest record {|
-    string user_id;
+    string user_id = "";
     
 |};
 
 
 public type GetCartRequest record {|
-    string user_id;
+    string user_id = "";
     
 |};
 
 
 public type Cart record {|
-    string user_id;
-    CartItem[] items;
+    string user_id = "";
+    CartItem[] items = [];
     
 |};
 
@@ -684,187 +684,187 @@ public type Empty record {|
 
 
 public type ListRecommendationsRequest record {|
-    string user_id;
-    string[] product_ids;
+    string user_id = "";
+    string[] product_ids = [];
     
 |};
 
 
 public type ListRecommendationsResponse record {|
-    string[] product_ids;
+    string[] product_ids = [];
     
 |};
 
 
 public type Product record {|
-    string id;
-    string name;
-    string description;
-    string picture;
-    Money price_usd;
-    string[] categories;
+    string id = "";
+    string name = "";
+    string description = "";
+    string picture = "";
+    Money? price_usd;
+    string[] categories = [];
     
 |};
 
 
 public type ListProductsResponse record {|
-    Product[] products;
+    Product[] products = [];
     
 |};
 
 
 public type GetProductRequest record {|
-    string id;
+    string id = "";
     
 |};
 
 
 public type SearchProductsRequest record {|
-    string query;
+    string query = "";
     
 |};
 
 
 public type SearchProductsResponse record {|
-    Product[] results;
+    Product[] results = [];
     
 |};
 
 
 public type GetQuoteRequest record {|
-    Address address;
-    CartItem[] items;
+    Address? address;
+    CartItem[] items = [];
     
 |};
 
 
 public type GetQuoteResponse record {|
-    Money cost_usd;
+    Money? cost_usd;
     
 |};
 
 
 public type ShipOrderRequest record {|
-    Address address;
-    CartItem[] items;
+    Address? address;
+    CartItem[] items = [];
     
 |};
 
 
 public type ShipOrderResponse record {|
-    string tracking_id;
+    string tracking_id = "";
     
 |};
 
 
 public type Address record {|
-    string street_address;
-    string city;
-    string state;
-    string country;
-    int zip_code;
+    string street_address = "";
+    string city = "";
+    string state = "";
+    string country = "";
+    int zip_code = 0;
     
 |};
 
 
 public type Money record {|
-    string currency_code;
-    int units;
-    int nanos;
+    string currency_code = "";
+    int units = 0;
+    int nanos = 0;
     
 |};
 
 
 public type GetSupportedCurrenciesResponse record {|
-    string[] currency_codes;
+    string[] currency_codes = [];
     
 |};
 
 
 public type CurrencyConversionRequest record {|
-    Money 'from;
-    string to_code;
+    Money? 'from;
+    string to_code = "";
     
 |};
 
 
 public type CreditCardInfo record {|
-    string credit_card_number;
-    int credit_card_cvv;
-    int credit_card_expiration_year;
-    int credit_card_expiration_month;
+    string credit_card_number = "";
+    int credit_card_cvv = 0;
+    int credit_card_expiration_year = 0;
+    int credit_card_expiration_month = 0;
     
 |};
 
 
 public type ChargeRequest record {|
-    Money amount;
-    CreditCardInfo credit_card;
+    Money? amount;
+    CreditCardInfo? credit_card;
     
 |};
 
 
 public type ChargeResponse record {|
-    string transaction_id;
+    string transaction_id = "";
     
 |};
 
 
 public type OrderItem record {|
-    CartItem item;
-    Money cost;
+    CartItem? item;
+    Money? cost;
     
 |};
 
 
 public type OrderResult record {|
-    string order_id;
-    string shipping_tracking_id;
-    Money shipping_cost;
-    Address shipping_address;
-    OrderItem[] items;
+    string order_id = "";
+    string shipping_tracking_id = "";
+    Money? shipping_cost;
+    Address? shipping_address;
+    OrderItem[] items = [];
     
 |};
 
 
 public type SendOrderConfirmationRequest record {|
-    string email;
-    OrderResult 'order;
+    string email = "";
+    OrderResult? 'order;
     
 |};
 
 
 public type PlaceOrderRequest record {|
-    string user_id;
-    string user_currency;
-    Address address;
-    string email;
-    CreditCardInfo credit_card;
+    string user_id = "";
+    string user_currency = "";
+    Address? address;
+    string email = "";
+    CreditCardInfo? credit_card;
     
 |};
 
 
 public type PlaceOrderResponse record {|
-    OrderResult 'order;
+    OrderResult? 'order;
     
 |};
 
 
 public type AdRequest record {|
-    string[] context_keys;
+    string[] context_keys = [];
     
 |};
 
 
 public type AdResponse record {|
-    Ad[] ads;
+    Ad[] ads = [];
     
 |};
 
 
 public type Ad record {|
-    string redirect_url;
-    string text;
+    string redirect_url = "";
+    string text = "";
     
 |};
 

@@ -6,9 +6,9 @@ complete a series of coding challenges, and win some amazing prizes.
 - [Overview](#Overview)
 - [Challenges](#Challenges)
 - [Prizes](#Prizes)
-- [Getting started](#Getting-started)
-- [Submission guidelines](#Submission-guidelines) 
-- [Judging](#Judging)
+- [Getting Started](#Getting-Started)
+- [Submission Guidelines](#Submission-Guidelines) 
+- [Judging Criteria](#Judging-Criteria)
 - [Rules](#Rules)
 - [FAQ](#FAQ)
 - [Hackathon policies](#Hackathon-policies)
@@ -56,10 +56,10 @@ source code for more information.
 | [currencyservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/currencyservice)  | <ol><li>Read the conversion data in /src/currencyservice/data/currency_conversion.json (you can copy it to your ballerina project)</li><li>Then implement the logic to output the correct conversion</li><li>based on the ratios in JSON data. The `GetSupportedCurrencies` and `Convert` resources have to be implemented.</li></ol>|
 | [checkoutservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/checkoutservice)  | <ol><li>Implement a service to generate ads based on given context keys.</li><li>Refer https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/docs/img/architecture-diagram.png</li></ol>  |
 
-The [Getting Started](#Getting-started) section has more details on how to complete these challenges
+The [Getting Started](#Getting-Started) section has more details on how to complete these challenges
 
 ## Prizes
-There are 5 challenges in this Ballerina hackathon. You need to complete all 5 challenges to be eligible for a prize.
+Here are the cool prizes you can win by completing the 3 challenges.
 
 - First Prize -  [Bose Quiet Comfort 35 wireless headphones II
   Star Wars: The Rise of Skywalker Edition](https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii-skywalker.html)
@@ -68,13 +68,14 @@ There are 5 challenges in this Ballerina hackathon. You need to complete all 5 c
 
 - The next best 10 submissions will receive $50 worth Amazon vouchers. 
 
+Read the [Judging Criteria](#Judging-Criteria) to see how you can win!
 
 
 **[TODO]** Document eligibility criteria 
 
 
 
-## Getting started
+## Getting Started
 ### Prerequisites
 #### Ballerina 
 - Visit https://ballerina.io/downloads/ to install the latest ballerina version 1.0.4 as well as the VSCode or IntelliJ IDEA plugins. 
@@ -175,7 +176,7 @@ In this demo, our recommendation is to create a Ballerina project for each micro
 
 [TODO]
 
-## Submission guidelines
+## Submission Guidelines
 
 Once you complete all 5 challenges, you can submit the source code and other details via the following mechanism. 
 
@@ -184,7 +185,7 @@ Once you complete all 5 challenges, you can submit the source code and other det
 - Then follow the instructions given in this Google form. **[TODO]**
 
 
-## Judging
+## Judging Criteria
 A panel of judges will review each successful submission based on the following criteria. 
 
 **[TODO]**

@@ -81,18 +81,26 @@ Read the [Judging Criteria](#Judging-Criteria) to see how you can win!
 - Visit https://ballerina.io/downloads/ to install the latest ballerina version 1.0.4 as well as the VSCode or IntelliJ IDEA plugins. 
 
 #### IDE Plugins
+
 ##### VSCode
 - Download the latest VSCode plugin here: https://ballerina.io/learn/tools-ides/vscode-plugin/
+
 ##### IDEA
 - Download the latest IntelliJ IDEA plugin here: https://ballerina.io/learn/tools-ides/intellij-plugin/
 
 #### Docker and Kubernetes 
-- Use Docker for Mac to install on Mac.
-- Use Docker for Windows to install on Windows.
-- Use Minikube to install on Linux.
+- Use [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) to install on Mac.
+- Use [Docker for Windows](https://docs.docker.com/docker-for-windows/) to install on Windows.
+- Install [Docker CE](https://docs.docker.com/v17.12/install/#server) and [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) on Linux.
+
+**Note**: Execute `eval $(minikube docker-env)` after installing Minikube so 
+that the Docker client points to Minikube’s docker registry.
 
 ### GitHub Repository
-1. Create a private GitHub repository in your account. Do not fork this repository if you want to keep your code private during the hackathon. An example repository name would be `ballerina-hackathon-kubecon-na-19`
+
+1. Create a private GitHub repository in your account. Do not fork this repository if you want to keep your code 
+private during the hackathon. An example repository name would be `ballerina-hackathon-kubecon-na-19`.
+
 2. Run the following commands to merge the microservices-demo content to your newly created repository.
     ```bash
     $ git clone https://github.com/<gitbubusername>/ballerina-hackathon-kubecon-na-19
@@ -107,30 +115,34 @@ Read the [Judging Criteria](#Judging-Criteria) to see how you can win!
     ```
 
 ### Running Hipster Shop Application (unchanged)
-1. Run the following command to deploy the app. This will take ~10 mins to complete. You will use pre-built container images that are available publicly, instead of building them yourself, which takes a long time
-    ```sh
-    kubectl apply -f ./release/kubernetes-manifests.yaml
-    ```
-2. Run `kubectl get pods` to see whether pods are in a Ready state. 
-3. If all the pods are running, `kubectl get service/frontend-external`
-4. Find the IP address of your application, then visit the application on your browser to confirm installation. (http://localhost:80 )
+1. Clone this repository, and go to the repository directory.
+2. Run `kubectl apply -f ./release/kubernetes-manifests.yaml` to deploy the app.
+3. Run `kubectl get pods` to see whether pods are in a Ready state. 
+4. If all the pods are running, `kubectl get service/frontend-external`
+5. Find the IP address of your application, then visit the application on your browser to confirm installation. 
+(http://localhost:80)
     ```sh
     kubectl get service/frontend-external
     ```
-    Note: If you are on minikube, get the hostname by executing `minikube ip`. Example: <MINIKUBE_IP>:<FRONTEND_EXTERNAL_PORT>
+    Note: If you are on Minikube, get the hostname by executing `minikube ip`. e.g., <MINIKUBE_IP>:<FRONTEND_EXTERNAL_PORT>
 
-    Congrats, You have successfully installed the default application by now. 
-5. Run `kubectl delete -f ./release/kubernetes-manifests.yaml` to delete what's deployed.
+    Congrats, you have successfully installed the default application by now.
+    
+6. Run `kubectl delete -f ./release/kubernetes-manifests.yaml` to delete what's deployed.
 
-### Running Hipster Shop Application with Ballerina Services
-To help you get started, We’ve already implemented the recommendation service in Ballerina, and the source code is available in the `src/recommendatationservice_ballerina` directory.
-1. Run the `scripts/setup.sh` script.
+### Running the Hipster Shop Application with Ballerina Services
+To help you get started, we’ve already implemented the recommendation service in Ballerina, and the source code is available in the `src/recommendatationservice_ballerina` directory.
+
+1. Go to the repository directory and run the start script:
+   ```sh
+   sh scripts/start.sh
+   ```
 
 2. Check pods with `kubectl get pods`
 
-3. Access the web UI (http://localhost:80 or `http://<minikube_ip>:<port>`)
+3. Access the web UI (http://localhost:80 or `http://<MINIKUBE_IP>:<FRONTEND_EXTERNAL_PORT>`)
 
-4. Run the `scripts/shutdown.sh` script to delete what's deployed.
+4. Run the `scripts/stop.sh` script to delete what's deployed.
 
 Now that you’ve successfully installed and deployed the Hipster Shop application with one microservice written in Ballerina, it’s time to start working on the challenges. 
 
@@ -173,8 +185,111 @@ Please find more information [here](https://ballerina.io/learn/how-to-structure-
 
 In this demo, our recommendation is to create a Ballerina project for each microservice. Let’s append “_ballerina” to the name of the microservices that you are working on. 
  
+1. Go to the src directory and run the following command to create a new project.
+    ```bash
+    $ cd src
+    $ ballerina new recommendationservice_ballerina
+    ```
+    
+2. Change the directory to the project directory you just created.
+    ```bash
+    $ cd recommendationservice_ballerina
+    ```
 
-[TODO]
+3. Add a new Ballerina module. This is where we maintain the code that belongs to the recommendationservice. 
+    ```bash
+    $ ballerina add recommendationservice
+    ```
+    
+    **Note**: You can delete the unnecessary generated files such as the main.bal file and the tests and resources 
+    directories inside the module directory.
+    
+4. Copy the corresponding service template source file and the demo_pb.bal file to the module directory.
+    ```bash
+    cp ../../stubs/demo_pb.bal src/recommendationservice/
+    cp ../../stubs/RecommendationService_sample_service.bal src/recommendationservice/
+    ```
+
+    Note: The demo_pb.bal file needs to copied to each project which contains clients and common constructs. 
+    
+5. Now that you have some Ballerina code try compiling the code with the `ballerina build -a` command. This command 
+builds all the modules in your project. If the build is successful, you can find an executable JAR file in the 
+project's `target/bin` directory.
+
+6. Refer the original instructions of each service defined in the [Challenges section](#Challenges), and rewrite the 
+logic in ballerina. Refer to the original source code to get an understanding of the business logic. 
+
+7. Checkout the diagram view for the service you implement.
+
+    You can follow the plugin specific instructions to view the diagram.
+    - [VSCode](https://ballerina.io/learn/tools-ides/vscode-plugin/graphical-editor)
+    - [IDEA](https://ballerina.io/learn/tools-ides/intellij-plugin/using-intellij-plugin-features#viewing-the-sequence-diagram)
+    
+    [TODO] add image
+
+8. Introduce `@kubernetes:Service` and `@kubernetes:Deployment` annotations to integrate generating the k8s artifacts during the build (Refer the recommendation service for examples). Make sure to use correct service name.
+
+    You can refer the following resources for detailed explanations on using the annotations:
+    - [Kubernetes Deployment Ballerina by Example](https://ballerina.io/learn/by-example/kubernetes-deployment.html)
+    - [The Kubernetes-Based Deployment section of How to Run and Deploy Ballerina Programs](https://ballerina.io/learn/how-to-deploy-and-run-ballerina-programs/)
+    
+    e.g.,
+    ```ballerina
+    @kubernetes:Service {
+        serviceType: "ClusterIP",
+        name: "recommendationservice"
+    }
+    ```
+
+    **Note**: A k8s deployment will be created by default, but if you need to change 
+    the k8s deployment, you can introduce the `@kubernetes:Deployment` annotation with the relevant configuration.
+    
+    Additionally, if you are using Minikube you would have to introduce the 
+    following deployment config.
+    ```ballerina
+    @kubernetes:Deployment {
+        dockerHost: "tcp://<docker_ip>:<docker_port>", 
+        dockerCertPath: ".minikube/certs"
+    }
+    ```
+
+    You can still skip the above when using Minikube by executing `eval $(minikube docker-env)`.
+     
+9. Build and generate the k8s artifacts, to ensure there are no errors.
+    
+    ```bash
+    ballerina build recommendationservice_ballerina
+    ```
+
+10. Once you’ve completed a service, update the start.sh file to use the Ballerina implementation of that service. You can replace the current command for the particular service with the Ballerina commands for them instead.
+
+    e.g.,
+    ```cmd
+    kubectl apply -f  $DEMO_HOME/kubernetes-manifests/recommendationservice.yaml
+    
+    # ballerina build --sourceroot $DEMO_HOME/src/recommendationservice_ballerina/src/recommendationservice --all
+    # kubectl apply -f  $DEMO_HOME/src/recommendationservice_ballerina/target/kubernetes/recommendationservice
+    ```
+
+    Here, comment out the first line and uncomment the second and third lines to use the Ballerina build and generated artifacts for the  service.
+
+11. Repeat step 10 for the stop.sh file.
+
+12. Run the modified setup script and check the status of the pods.
+    ```bash
+    kubectl get pods
+    ```
+
+13. Tail the logs of your services.
+    ```bash
+    kubectl logs -f <pod-name>
+    ```
+
+14. Access the web UI (http://localhost:80 or http://<MINIKUBE_IP>:<FRONTEND_EXTERNAL_PORT>)
+
+15. Use the stop script to clean the deployments.
+
+16. Then move on to the next challenge and repeat steps 1 - 15.
 
 ## Submission Guidelines
 

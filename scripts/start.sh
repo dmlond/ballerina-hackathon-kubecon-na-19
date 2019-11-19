@@ -22,7 +22,6 @@ kubectl apply -f  $DEMO_HOME/kubernetes-manifests/emailservice.yaml
 kubectl apply -f  $DEMO_HOME/kubernetes-manifests/frontend.yaml
 kubectl apply -f  $DEMO_HOME/kubernetes-manifests/loadgenerator.yaml
 kubectl apply -f  $DEMO_HOME/kubernetes-manifests/paymentservice.yaml
-kubectl apply -f  $DEMO_HOME/kubernetes-manifests/recommendationservice.yaml
 kubectl apply -f  $DEMO_HOME/kubernetes-manifests/redis.yaml
 kubectl apply -f  $DEMO_HOME/kubernetes-manifests/shippingservice.yaml
 

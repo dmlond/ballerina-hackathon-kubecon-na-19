@@ -70,11 +70,6 @@ Here are the cool prizes you can win by completing the 3 challenges.
 
 Read the [Judging Criteria](#Judging-Criteria) to see how you can win!
 
-
-**[TODO]** Document eligibility criteria 
-
-
-
 ## Getting Started
 ### Prerequisites
 #### Ballerina 

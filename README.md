@@ -178,23 +178,35 @@ In this demo, our recommendation is to create a Ballerina project for each micro
 
 ## Submission Guidelines
 
-Once you complete all 5 challenges, you can submit the source code and other details via the following mechanism. 
+After you’ve completed as many challenges as possible, submit the source code before 12:00 p.m. on the last day of the conference (November 21, 2019) by following these steps.
 
 - Document everything that we need to be aware of your solution in the root README.md file of your repository. 
 - Download a zip file of your GitHub repository using the GitHub web interface. 
-- Then follow the instructions given in this Google form. **[TODO]**
+- Then follow the instructions given in this
+  [Ballerina Hackathon Submission Form](https://forms.gle/bPPFssAuV4GLpSD87)
 
 
 ## Judging Criteria
-A panel of judges will review each successful submission based on the following criteria. 
+A panel of judges will review each submission based on the following criteria.
 
-**[TODO]**
+- Your submission will be scored out of :100:.
+- Scores are given to each challenge based on its level (see under the ‘Challenges’ section for the challenge levels).
+- Here’s the maximum score you can get for each challenge:
+  - adservice - 20
+  - currencyservice - 30
+  - checkoutservice - 50
+- You can get full points if you submit a working microservice that meets all the submission requirements.
+- If more than one person has the same highest score, we’ll run the submissions through a raffle program that we wrote in Ballerina to select the order of winners.
+- Here’s what the winners will get.
+  - First Prize - Bose Quiet Comfort 35 Wireless Headphones II Star Wars: The Rise of Skywalker Edition
+  - Second Prize - Echo Studio
+  - The next best 10 submissions will receive $50 Amazon vouchers each
+- You need to be at the Ballerina booth (P13) at 3:00 p.m. on Thursday, November 21, when the winners will be announced. If the announced winners are not at the booth, the prizes will be given to the next highest scorers.
 
 ## Rules
-- You have to be a KubeCon North America 2019 attendee to participate in this hackathon.
-- **[TODO]**
-
-
+- You have to be a KubeCon + CloudNativeCon North America 2019 attendee to participate in this hackathon.
+- You have to come to the booth at 3:00 p.m. on Thursday, November 21 to collect prizes.
+- Plagiarism will result in disqualification.
 
 ## FAQ
 1. How do I get help with queries related to the hackathon?

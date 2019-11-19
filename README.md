@@ -321,21 +321,27 @@ A panel of judges will review each submission based on the following criteria.
 - Plagiarism will result in disqualification.
 
 ## FAQ
-1. How do I get help with queries related to the hackathon?
+- How do I get help with queries related to the hackathon?
+  - If you have general questions on Ballerina, ask them on our Slack channel, Google group, or on Stackoverflow with the tag [ballerina]. If you have specific questions related to the hackathon, please visit the Ballerina booth (P13).
+- Is this an individual challenge, or can I form a team for this?
+  - Either option is fine, but if a group wins any place in the hackathon, only one prize will be distributed to the team.
+- Who can participate in the hackathon?
+  - You have to be a KubeCon + CloudNativeCon North America 2019 attendee to participate in this hackathon.
+- How do I learn the ballerina language?
+  - You can visit https://ballerina.io/ to learn language constructs and check for examples at (https://ballerina.io/learn/by-example/)
+- My vscode plugin doesn’t work after installation
+  - If you installed a new Ballerina version recently, you might need to restart the VS Code Editor to pick the new Ballerina version. Herein, If you are using Mac OS, press ‘Command+Q’ keys to quit the app and reopen it.
 
-    If you have general questions on Ballerina, ask them on our Slack channel, Google group, or on Stackoverflow with the tag [ballerina]. If you have specific questions related to the hackathon, please visit the Ballerina booth(P13).
+## Hackathon Code of Conduct
 
-2. Is this an individual challenge, or can I form a team for this?
+This hackathon is intended for learning, collaboration, and engagement in the developer community at KubeCon + CloudNativeCon North America 2019. We value the participation of each attendee and want to ensure that everyone involved has a great experience. To make it clear what is expected, all organizers, participants, mentors, and judges of the Ballerina hackathon are required to conform to the following Code of Conduct. Organizers will enforce this conduct throughout the duration of the hackathon.
 
-    [TODO]
-3. Who can participate in the hackathon?
+- Be respectful: *Do not insult or put down other participants. Behave professionally. Remember that harassment and racist, sexist, or exclusionary jokes are not appropriate for this hackathon.
+Harassment includes offensive verbal comments related to gender, sexual orientation, disability, physical appearance, body size, race, religion, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention*.
 
-    You have to be a KubeCon North America 2019 attendee to participate in this hackathon.
+- Be open: We welcome participants from all backgrounds. This hackathon is about increasing the overall amount of learning, partnership, and engagement in the KubeCon + CloudNativeCon developer community.
+ 
+- Be vigilant: If you see any participant violating the above two points, please inform any of the Ballerina booth (P13) staff at KubeCon + CloudNativeCon North America 2019.
 
-4. **[TODO]**
+Participants violating these rules may not be able to make a code submission at the sole discretion of the organizers. Thank you for helping make this welcoming and friendly for all!
 
-
-
-## Hackathon policies?
-
-**[TODO]**

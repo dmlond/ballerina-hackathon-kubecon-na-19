@@ -206,8 +206,8 @@ In this demo, our recommendation is to create a Ballerina project for each micro
     
 4. Copy the corresponding service template source file and the demo_pb.bal file to the module directory.
     ```bash
-    cp ../../stubs/demo_pb.bal src/recommendationservice/
-    cp ../../stubs/RecommendationService_sample_service.bal src/recommendationservice/
+    $ cp ../../stubs/demo_pb.bal src/recommendationservice/
+    $ cp ../../stubs/RecommendationService_sample_service.bal src/recommendationservice/
     ```
 
     Note: The demo_pb.bal file needs to copied to each project which contains clients and common constructs. 
@@ -225,7 +225,9 @@ logic in ballerina. Refer to the original source code to get an understanding of
     - [VSCode](https://ballerina.io/learn/tools-ides/vscode-plugin/graphical-editor)
     - [IDEA](https://ballerina.io/learn/tools-ides/intellij-plugin/using-intellij-plugin-features#viewing-the-sequence-diagram)
     
-    [TODO] add image
+    For example, the current implementation for the recommendation service would generate the following diagram. 
+    [![Diagram for the recommendation service](./docs/img/RecommendationService.png)](./docs/img/RecommendationService.png)
+
 
 8. Introduce `@kubernetes:Service` and `@kubernetes:Deployment` annotations to integrate generating the k8s artifacts during the build (Refer the recommendation service for examples). Make sure to use correct service name.
 
@@ -258,13 +260,13 @@ logic in ballerina. Refer to the original source code to get an understanding of
 9. Build and generate the k8s artifacts, to ensure there are no errors.
     
     ```bash
-    ballerina build recommendationservice_ballerina
+    $ ballerina build recommendationservice_ballerina
     ```
 
 10. Once you’ve completed a service, update the start.sh file to use the Ballerina implementation of that service. You can replace the current command for the particular service with the Ballerina commands for them instead.
 
     e.g.,
-    ```cmd
+    ```bash
     kubectl apply -f  $DEMO_HOME/kubernetes-manifests/recommendationservice.yaml
     
     # ballerina build --sourceroot $DEMO_HOME/src/recommendationservice_ballerina/src/recommendationservice --all
@@ -277,12 +279,12 @@ logic in ballerina. Refer to the original source code to get an understanding of
 
 12. Run the modified setup script and check the status of the pods.
     ```bash
-    kubectl get pods
+    $ kubectl get pods
     ```
 
 13. Tail the logs of your services.
     ```bash
-    kubectl logs -f <pod-name>
+    $ kubectl logs -f <pod-name>
     ```
 
 14. Access the web UI (http://localhost:80 or http://<MINIKUBE_IP>:<FRONTEND_EXTERNAL_PORT>)

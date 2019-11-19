@@ -62,8 +62,8 @@ kubectl apply -f  $DEMO_HOME/kubernetes-manifests/adservice.yaml
 
 
 # Checkout service
-# kubectl apply -f  $DEMO_HOME/kubernetes-manifests/checkoutservice.yaml
+kubectl apply -f  $DEMO_HOME/kubernetes-manifests/checkoutservice.yaml
 
 # Replace above with following command when you implemented the checkout service in Ballerina.
-ballerina build --sourceroot $DEMO_HOME/src/checkoutservice_ballerina/src/checkoutservice --all
-kubectl apply -f  $DEMO_HOME/src/checkoutservice_ballerina/target/kubernetes/checkoutservice
+# ballerina build --sourceroot $DEMO_HOME/src/checkoutservice_ballerina/src/checkoutservice --all
+# kubectl apply -f  $DEMO_HOME/src/checkoutservice_ballerina/target/kubernetes/checkoutservice

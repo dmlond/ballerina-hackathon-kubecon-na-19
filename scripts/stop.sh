@@ -43,5 +43,5 @@ kubectl delete -f  $DEMO_HOME/kubernetes-manifests/adservice.yaml
 # kubectl delete -f  $DEMO_HOME/src/adservice_ballerina/target/kubernetes/adservice
 
 # checkout service.
-# kubectl delete -f  $DEMO_HOME/kubernetes-manifests/checkoutservice.yaml
-kubectl delete -f  $DEMO_HOME/src/checkoutservice_ballerina/target/kubernetes/checkoutservice
+kubectl delete -f  $DEMO_HOME/kubernetes-manifests/checkoutservice.yaml
+# kubectl delete -f  $DEMO_HOME/src/checkoutservice_ballerina/target/kubernetes/checkoutservice

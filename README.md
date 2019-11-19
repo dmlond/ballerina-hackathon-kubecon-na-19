@@ -124,13 +124,13 @@ Read the [Judging Criteria](#Judging-Criteria) to see how you can win!
 
 ### Running Hipster Shop Application with Ballerina Services
 To help you get started, We’ve already implemented the recommendation service in Ballerina, and the source code is available in the `src/recommendatationservice_ballerina` directory.
-1. Run the `scripts/setup.sh` script.
+1. Run the `scripts/start.sh` script.
 
 2. Check pods with `kubectl get pods`
 
 3. Access the web UI (http://localhost:80 or `http://<minikube_ip>:<port>`)
 
-4. Run the `scripts/shutdown.sh` script to delete what's deployed.
+4. Run the `scripts/stop.sh` script to delete what's deployed.
 
 Now that you’ve successfully installed and deployed the Hipster Shop application with one microservice written in Ballerina, it’s time to start working on the challenges. 
 

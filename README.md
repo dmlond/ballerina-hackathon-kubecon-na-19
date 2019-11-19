@@ -73,14 +73,20 @@ There are 5 challenges in this Ballerina hackathon. You need to complete all 5 c
 #### Ballerina 
 - Visit https://ballerina.io/downloads/ to install the latest ballerina version 1.0.4 as well as the VSCode or IntelliJ IDEA plugins. 
 
+#### IDE Plugins
+##### VSCode
+- Download the latest VSCode plugin here: https://ballerina.io/learn/tools-ides/vscode-plugin/
+##### IDEA
+- Download the latest IntelliJ IDEA plugin here: https://ballerina.io/learn/tools-ides/intellij-plugin/
+
 #### Docker and Kubernetes 
 - Use Docker for Mac to install on Mac.
 - Use Docker for Windows to install on Windows.
 - Use Minikube to install on Linux.
 
-### GitHub repository
+### GitHub Repository
 1. Create a private GitHub repository in your account. Do not fork this repository if you want to keep your code private during the hackathon. An example repository name would be `ballerina-hackathon-kubecon-na-19`
-1. Run following commands to merge microservices-demo content to your newly created repository.
+2. Run the following commands to merge the microservices-demo content to your newly created repository.
     ```bash
     $ git clone https://github.com/<gitbubusername>/ballerina-hackathon-kubecon-na-19
 
@@ -98,7 +104,7 @@ There are 5 challenges in this Ballerina hackathon. You need to complete all 5 c
     ```sh
     kubectl apply -f ./release/kubernetes-manifests.yaml
     ```
-2. Run `kubectl get pods` to see pods are in a Ready state. 
+2. Run `kubectl get pods` to see whether pods are in a Ready state. 
 3. If all the pods are running, `kubectl get service/frontend-external`
 4. Find the IP address of your application, then visit the application on your browser to confirm installation. (http://localhost:80 )
     ```sh
@@ -106,11 +112,11 @@ There are 5 challenges in this Ballerina hackathon. You need to complete all 5 c
     ```
     Note: If you are on minikube, get the hostname by executing `minikube ip`. Example: <MINIKUBE_IP>:<FRONTEND_EXTERNAL_PORT>
 
-    You have successfully installed the default application by now. 
+    Congrats, You have successfully installed the default application by now. 
 5. Run `kubectl delete -f ./release/kubernetes-manifests.yaml` to delete what's deployed.
 
-### Running Hipster Shop Application with Ballerina services
-We’ve already implemented the recommendation service in Ballerina, and the source code is available in `src/recommendatationservice_ballerina` directory.
+### Running Hipster Shop Application with Ballerina Services
+To help you get started, We’ve already implemented the recommendation service in Ballerina, and the source code is available in the `src/recommendatationservice_ballerina` directory.
 1. Run the `scripts/setup.sh` script.
 
 2. Check pods with `kubectl get pods`
@@ -119,8 +125,47 @@ We’ve already implemented the recommendation service in Ballerina, and the sou
 
 4. Run the `scripts/shutdown.sh` script to delete what's deployed.
 
-### Let's start with Currency Service
-Now that you’ve successfully installed and deployed the Hipster Shop application with one microservice written in Ballerina, it is time to start working on the challenges. Let’s start with writing the [currencyservice](./src/currencyservice) in Ballerina. You can repeat the following set of instructions for all five services.  
+Now that you’ve successfully installed and deployed the Hipster Shop application with one microservice written in Ballerina, it’s time to start working on the challenges. 
+
+The microservices in this application talk to each other over gRPC. I.e, the microservices that you are implementing will receive requests over gRPC and they will also integrate with other microservices over gRPC. You can find the protocol buffers description [here](./pb/demo.proto).
+
+The first step would be to generate Ballerina gRPC service skeletons and client stubs. You can follow the following guides to learn more about gRPC support in Ballerina. 
+
+- https://ballerina.io/learn/how-to-generate-code-for-protocol-buffers/ 
+- https://github.com/ballerina-guides/grpc-service
+- https://ballerina.io/learn/by-example/grpc-unary-blocking.html
+
+### Generating Ballerina source code for gRPC protocol buffers
+Go to  your repository directory and run the following command to generate Services from proto file.
+```sh
+ballerina grpc --input pb/demo.proto  --output stubs --mode service
+```
+Now the “stubs” directory will have the generated Ballerina services and client artifacts as below.
+
+Services skeletons
+- AdService_sample_service.bal
+- CheckoutService_sample_service.bal                
+- PaymentService_sample_service.bal
+- RecommendationService_sample_service.bal    
+- ProductCatalogService_sample_service.bal     
+- CurrencyService_sample_service.bal
+- CartService_sample_service.bal   
+- EmailService_sample_service.bal   
+- ShippingService_sample_service.bal
+
+Client stubs
+- demo_pb.bal
+
+Note: You can copy the relevant service skeleton file and the demo_pb.bal file to your project.
+ 
+Let’s start by writing the [recommendationservice](./src/recommendationservice) in Ballerina. We’ve already implemented this service for your reference. Here are the steps that we followed. You can repeat the same for all 3 challenges.  
+
+### Let's start with the Recommendation Service
+In Ballerina, the code is structured using projects and modules. A module is a directory which provides collaboration, sharing, and reuse of Ballerina code. Projects can have multiple related modules.
+Please find more information [here](https://ballerina.io/learn/how-to-structure-ballerina-code/).
+
+In this demo, our recommendation is to create a Ballerina project for each microservice. Let’s append “_ballerina” to the name of the microservices that you are working on. 
+ 
 
 [TODO]
 

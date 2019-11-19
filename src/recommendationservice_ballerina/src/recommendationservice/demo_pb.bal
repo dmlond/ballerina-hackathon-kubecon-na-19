@@ -24,12 +24,9 @@ public type CartServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<Empty>.constructFrom(result);
-        if (value is Empty) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<Empty>result, resHeaders];
+        
     }
 
     public remote function GetCart(GetCartRequest req, grpc:Headers? headers = ()) returns ([Cart, grpc:Headers]|grpc:Error) {
@@ -38,12 +35,9 @@ public type CartServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<Cart>.constructFrom(result);
-        if (value is Cart) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<Cart>result, resHeaders];
+        
     }
 
     public remote function EmptyCart(EmptyCartRequest req, grpc:Headers? headers = ()) returns ([Empty, grpc:Headers]|grpc:Error) {
@@ -52,12 +46,9 @@ public type CartServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<Empty>.constructFrom(result);
-        if (value is Empty) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<Empty>result, resHeaders];
+        
     }
 
 };
@@ -121,12 +112,9 @@ public type RecommendationServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<ListRecommendationsResponse>.constructFrom(result);
-        if (value is ListRecommendationsResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<ListRecommendationsResponse>result, resHeaders];
+        
     }
 
 };
@@ -180,12 +168,9 @@ public type ProductCatalogServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<ListProductsResponse>.constructFrom(result);
-        if (value is ListProductsResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<ListProductsResponse>result, resHeaders];
+        
     }
 
     public remote function GetProduct(GetProductRequest req, grpc:Headers? headers = ()) returns ([Product, grpc:Headers]|grpc:Error) {
@@ -194,12 +179,9 @@ public type ProductCatalogServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<Product>.constructFrom(result);
-        if (value is Product) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<Product>result, resHeaders];
+        
     }
 
     public remote function SearchProducts(SearchProductsRequest req, grpc:Headers? headers = ()) returns ([SearchProductsResponse, grpc:Headers]|grpc:Error) {
@@ -208,12 +190,9 @@ public type ProductCatalogServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<SearchProductsResponse>.constructFrom(result);
-        if (value is SearchProductsResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<SearchProductsResponse>result, resHeaders];
+        
     }
 
 };
@@ -277,12 +256,9 @@ public type ShippingServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<GetQuoteResponse>.constructFrom(result);
-        if (value is GetQuoteResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<GetQuoteResponse>result, resHeaders];
+        
     }
 
     public remote function ShipOrder(ShipOrderRequest req, grpc:Headers? headers = ()) returns ([ShipOrderResponse, grpc:Headers]|grpc:Error) {
@@ -291,12 +267,9 @@ public type ShippingServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<ShipOrderResponse>.constructFrom(result);
-        if (value is ShipOrderResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<ShipOrderResponse>result, resHeaders];
+        
     }
 
 };
@@ -355,12 +328,9 @@ public type CurrencyServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<GetSupportedCurrenciesResponse>.constructFrom(result);
-        if (value is GetSupportedCurrenciesResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<GetSupportedCurrenciesResponse>result, resHeaders];
+        
     }
 
     public remote function Convert(CurrencyConversionRequest req, grpc:Headers? headers = ()) returns ([Money, grpc:Headers]|grpc:Error) {
@@ -369,12 +339,9 @@ public type CurrencyServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<Money>.constructFrom(result);
-        if (value is Money) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<Money>result, resHeaders];
+        
     }
 
 };
@@ -433,12 +400,9 @@ public type PaymentServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<ChargeResponse>.constructFrom(result);
-        if (value is ChargeResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<ChargeResponse>result, resHeaders];
+        
     }
 
 };
@@ -492,12 +456,9 @@ public type EmailServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<Empty>.constructFrom(result);
-        if (value is Empty) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<Empty>result, resHeaders];
+        
     }
 
 };
@@ -551,12 +512,9 @@ public type CheckoutServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<PlaceOrderResponse>.constructFrom(result);
-        if (value is PlaceOrderResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<PlaceOrderResponse>result, resHeaders];
+        
     }
 
 };
@@ -610,12 +568,9 @@ public type AdServiceBlockingClient client object {
         grpc:Headers resHeaders = new;
         anydata result = ();
         [result, resHeaders] = payload;
-        var value = typedesc<AdResponse>.constructFrom(result);
-        if (value is AdResponse) {
-            return [value, resHeaders];
-        } else {
-            return grpc:prepareError(grpc:INTERNAL_ERROR, "Error while constructing the message", value);
-        }
+        
+        return [<AdResponse>result, resHeaders];
+        
     }
 
 };
@@ -654,7 +609,7 @@ public type CartItem record {|
 
 public type AddItemRequest record {|
     string user_id = "";
-    CartItem? item;
+    CartItem? item = ();
     
 |};
 
@@ -701,7 +656,7 @@ public type Product record {|
     string name = "";
     string description = "";
     string picture = "";
-    Money? price_usd;
+    Money? price_usd = ();
     string[] categories = [];
     
 |};
@@ -732,20 +687,20 @@ public type SearchProductsResponse record {|
 
 
 public type GetQuoteRequest record {|
-    Address? address;
+    Address? address = ();
     CartItem[] items = [];
     
 |};
 
 
 public type GetQuoteResponse record {|
-    Money? cost_usd;
+    Money? cost_usd = ();
     
 |};
 
 
 public type ShipOrderRequest record {|
-    Address? address;
+    Address? address = ();
     CartItem[] items = [];
     
 |};
@@ -782,7 +737,7 @@ public type GetSupportedCurrenciesResponse record {|
 
 
 public type CurrencyConversionRequest record {|
-    Money? 'from;
+    Money? 'from = ();
     string to_code = "";
     
 |};
@@ -798,8 +753,8 @@ public type CreditCardInfo record {|
 
 
 public type ChargeRequest record {|
-    Money? amount;
-    CreditCardInfo? credit_card;
+    Money? amount = ();
+    CreditCardInfo? credit_card = ();
     
 |};
 
@@ -811,8 +766,8 @@ public type ChargeResponse record {|
 
 
 public type OrderItem record {|
-    CartItem? item;
-    Money? cost;
+    CartItem? item = ();
+    Money? cost = ();
     
 |};
 
@@ -820,8 +775,8 @@ public type OrderItem record {|
 public type OrderResult record {|
     string order_id = "";
     string shipping_tracking_id = "";
-    Money? shipping_cost;
-    Address? shipping_address;
+    Money? shipping_cost = ();
+    Address? shipping_address = ();
     OrderItem[] items = [];
     
 |};
@@ -829,7 +784,7 @@ public type OrderResult record {|
 
 public type SendOrderConfirmationRequest record {|
     string email = "";
-    OrderResult? 'order;
+    OrderResult? 'order = ();
     
 |};
 
@@ -837,15 +792,15 @@ public type SendOrderConfirmationRequest record {|
 public type PlaceOrderRequest record {|
     string user_id = "";
     string user_currency = "";
-    Address? address;
+    Address? address = ();
     string email = "";
-    CreditCardInfo? credit_card;
+    CreditCardInfo? credit_card = ();
     
 |};
 
 
 public type PlaceOrderResponse record {|
-    OrderResult? 'order;
+    OrderResult? 'order = ();
     
 |};
 

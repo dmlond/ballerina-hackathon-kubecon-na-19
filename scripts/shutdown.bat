@@ -16,20 +16,20 @@ kubectl delete -f  %DEMO_HOME%\src\recommendationservice_ballerina\target\kubern
 
 rem Currency service
 kubectl delete -f  %DEMO_HOME%\kubernetes-manifests\currencyservice.yaml
-# kubectl delete -f  %DEMO_HOME%\src\currencyservice_ballerina\target\kubernetes\currencyservice
+rem kubectl delete -f  %DEMO_HOME%\src\currencyservice_ballerina\target\kubernetes\currencyservice
 
 rem Product catelog service.
 kubectl delete -f  %DEMO_HOME%\kubernetes-manifests\productcatalogservice.yaml
-#kubectl delete -f  %DEMO_HOME%\src\productcatalogservice_ballerina\target\kubernetes\productcatalogservice
+rem kubectl delete -f  %DEMO_HOME%\src\productcatalogservice_ballerina\target\kubernetes\productcatalogservice
 
 rem Cart service
 kubectl delete -f  %DEMO_HOME%\kubernetes-manifests\cartservice.yaml
-# kubectl delete -f  %DEMO_HOME%\src\cartservice_ballerina\target\kubernetes\cartservice
+rem kubectl delete -f  %DEMO_HOME%\src\cartservice_ballerina\target\kubernetes\cartservice
 
 rem Ad service
 kubectl delete -f  %DEMO_HOME%\kubernetes-manifests\adservice.yaml
-# kubectl delete -f  %DEMO_HOME%\src\adservice_ballerina\target\kubernetes\adservice
+rem kubectl delete -f  %DEMO_HOME%\src\adservice_ballerina\target\kubernetes\adservice
 
 rem checkout service.
 kubectl delete -f  %DEMO_HOME%\kubernetes-manifests\checkoutservice.yaml
-# kubectl delete -f  %DEMO_HOME%\src\checkoutservice_ballerina\target\kubernetes\checkoutservice_ballerina
+rem kubectl delete -f  %DEMO_HOME%\src\checkoutservice_ballerina\target\kubernetes\checkoutservice

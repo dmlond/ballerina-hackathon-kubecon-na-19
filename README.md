@@ -1,6 +1,7 @@
-# Ballerina hackathon - KubeCon North America 2019
+# Ballerina Hackathon - KubeCon + CloudNativeCon North America 2019
 
-Ballerina hackathon is an open invitation to all the KubeCon NA 2019 attendees to use their Ballerina skills with Kubernetes to complete a series of coding challenges and win amazing prizes. 
+This hackathon is an open invitation to all KubeCon NA 2019 attendees to try out Ballerina with Kubernetes, 
+complete a series of coding challenges, and win some amazing prizes.
 
 - [Overview](#Overview)
 - [Challenges](#Challenges)
@@ -15,37 +16,47 @@ Ballerina hackathon is an open invitation to all the KubeCon NA 2019 attendees t
 ## Overview
 These coding challenges are all about having fun, learning a new programming language, mashing up microservices, and deploying them on Kubernetes. Here are some essential details about this hackathon. 
 
-- Venue: KubeCon NA 2019
+- Venue: [KubeCon + CloudNativeCon North America 2019](https://events19.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/)
 
-- Start: Nov 19, 2019 10.00AM
+- Start: Nov 19, 2019 at 10:00 a.m.
 
-- End: Nov 21, 2019 12.00PM
+- Submission deadline: Nov 21, 2019 12:00 p.m.
 
-- Winners will be announced by Nov 21, 209 3.00 PM
+- Winners will be announced at 3:00 p.m. on Nov 21 at the Ballerina booth
 
 ## Challenges
 
-The challenges are based on the “[Hipster Shop: Cloud-Native Microservices Demo Application](https://github.com/GoogleCloudPlatform/microservices-demo)” developed by Google Cloud. It is a web-based e-commerce application with 10 microservices written in different programming languages. You can refer to the original [README.md](https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/README.md) file to learn more about this application.
+The challenges are based on the “[Hipster Shop: Cloud-Native Microservices Demo Application](https://github.com/GoogleCloudPlatform/microservices-demo)” 
+developed by Google Cloud. It is a web-based e-commerce application with 10 microservices written in different programming languages that 
+talk to each other over gRPC. You can refer to the original [README.md](https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/README.md) file 
+to learn more about this application. Here is a brief overview of the service architecture.
 
-In this hackathon your task is to implement following microservices in Ballerina. We expect you to look at the original source code and rewrite the same logic in Ballerina. You can refer to the [Getting started](#Getting-started) section for more details on how to complete these challenges.
+[![Architecture of microservices](./docs/img/architecture-diagram.png)](./docs/img/architecture-diagram.png)
 
-- The “**[currencyservice](./src/currencyservice)**” microservice
-    - Language: Node.js
-    - Description: Converts one money amount to another currency. Uses real values fetched from European Central Bank. It's the highest QPS service.
+All you have to do is implement the following microservices in Ballerina. Order of services indicate how much Ballerina 
+knowledge you will need to implement it as the first service require very little knowledge of Ballerina as well as the 
+lines of code. We recommend you to complete the challenges in the order they appear in the below table to make the 
+learning process easy.
 
-- The “**[adservice](./src/adservice)**” microservice 
-    - Language: Java
-    - Description: Provides text ads based on given context words.
-- The “**[productcatalogservice](./src/productcatalogservice)**” microservice
-    - Language: Go
-    - Description: Provides the list of products from a JSON file and ability to search products and get individual products.
-- The “**[cartservice](./src/cartservice)**” microservice
-    - Language: C#
-    - Description: Stores the items in the user's shopping cart in Redis and retrieves it.
+| Microservice  | Original Language | Description |
+| ------------- | ------------- | ------------- |
+| [adservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/adservice)  | Java | Provides text ads based on given context words |
+| [currencyservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/currencyservice)  | NodeJS  | Converts a certain amount in one currency to another currency. |
+| [checkoutservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/checkoutservice)  | Go  | Retrieves the user cart, prepares the order and orchestrates the payment, shipping and the email notification. |
 
-- The “**[checkoutservice](./src/checkoutservice)**” microservice
-    - Language: Go
-    - Description: Retrieves user cart, prepares order and orchestrates the payment, shipping and the email notification.
+
+### Hear's What you need to do
+
+Take a look at the steps for each service below to understand how you need to implement the logic. Check out the original 
+source code for more information.
+
+| Microservice  | Instructions |
+| ------------- | ------------- |
+| [adservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/adservice)  | <ol><li>Implement a service to generate ads based on given context keys.</li></ol>  |
+| [currencyservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/currencyservice)  | <ol><li>Read the conversion data in /src/currencyservice/data/currency_conversion.json (you can copy it to your ballerina project)</li><li>Then implement the logic to output the correct conversion</li><li>based on the ratios in JSON data. The `GetSupportedCurrencies` and `Convert` resources have to be implemented.</li></ol>|
+| [checkoutservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/checkoutservice)  | <ol><li>Implement a service to generate ads based on given context keys.</li><li>Refer https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/docs/img/architecture-diagram.png</li></ol>  |
+
+The [Getting Started](#Getting-started) section has more details on how to complete these challenges
 
 ## Prizes
 There are 5 challenges in this Ballerina hackathon. You need to complete all 5 challenges to be eligible for a prize.

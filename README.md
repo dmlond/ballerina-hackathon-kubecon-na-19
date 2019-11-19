@@ -45,7 +45,7 @@ learning process easy.
 | [checkoutservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/checkoutservice)  | Go  | Retrieves the user cart, prepares the order and orchestrates the payment, shipping and the email notification. |
 
 
-### Hear's What you need to do
+### Here’s What You Need to Do
 
 Take a look at the steps for each service below to understand how you need to implement the logic. Check out the original 
 source code for more information.

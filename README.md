@@ -33,8 +33,8 @@ to learn more about this application. Here is a brief overview of the service ar
 
 [![Architecture of microservices](./docs/img/architecture-diagram.png)](./docs/img/architecture-diagram.png)
 
-All you have to do is implement the following microservices in Ballerina. Order of services indicate how much Ballerina 
-knowledge you will need to implement it as the first service require very little knowledge of Ballerina as well as the 
+All you have to do is implement the following microservices in Ballerina. The order of services indicate how much Ballerina 
+knowledge you will need to implement it (the first service requires very little knowledge of Ballerina, etc.) as well as the 
 lines of code. We recommend you to complete the challenges in the order they appear in the below table to make the 
 learning process easy.
 
@@ -53,7 +53,7 @@ source code for more information.
 | Microservice  | Instructions |
 | ------------- | ------------- |
 | [adservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/adservice)  | <ol><li>Implement a service to generate ads based on given context keys.</li></ol>  |
-| [currencyservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/currencyservice)  | <ol><li>Read the conversion data in /src/currencyservice/data/currency_conversion.json (you can copy it to your ballerina project)</li><li>Then implement the logic to output the correct conversion</li><li>based on the ratios in JSON data. The `GetSupportedCurrencies` and `Convert` resources have to be implemented.</li></ol>|
+| [currencyservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/currencyservice)  | <ol><li>Read the conversion data in /src/currencyservice/data/currency_conversion.json (you can copy it to your ballerina project)</li><li>Then implement the logic to output the correct conversion based on the ratios in JSON data. The `GetSupportedCurrencies` and `Convert` resources have to be implemented.</li></ol>|
 | [checkoutservice](https://github.com/ballerina-guides/microservices-demo/blob/master/src/checkoutservice)  | <ol><li>Implement a service to generate ads based on given context keys.</li><li>Refer https://github.com/GoogleCloudPlatform/microservices-demo/blob/master/docs/img/architecture-diagram.png</li></ol>  |
 
 The [Getting Started](#Getting-Started) section has more details on how to complete these challenges
@@ -230,7 +230,7 @@ logic in ballerina. Refer to the original source code to get an understanding of
     - [Kubernetes Deployment Ballerina by Example](https://ballerina.io/learn/by-example/kubernetes-deployment.html)
     - [The Kubernetes-Based Deployment section of How to Run and Deploy Ballerina Programs](https://ballerina.io/learn/how-to-deploy-and-run-ballerina-programs/)
     
-    e.g.,
+    For example:
     ```ballerina
     @kubernetes:Service {
         serviceType: "ClusterIP",
@@ -238,11 +238,9 @@ logic in ballerina. Refer to the original source code to get an understanding of
     }
     ```
 
-    **Note**: A k8s deployment will be created by default, but if you need to change 
-    the k8s deployment, you can introduce the `@kubernetes:Deployment` annotation with the relevant configuration.
+    **Note**: A k8s deployment will be created by default, but if you need to change it, you can introduce the `@kubernetes:Deployment` annotation with the relevant configuration.
     
-    Additionally, if you are using Minikube you would have to introduce the 
-    following deployment config.
+    Additionally, if you are using Minikube you would have to introduce the following deployment config.
     ```ballerina
     @kubernetes:Deployment {
         dockerHost: "tcp://<docker_ip>:<docker_port>", 
@@ -252,7 +250,7 @@ logic in ballerina. Refer to the original source code to get an understanding of
 
     You can still skip the above when using Minikube by executing `eval $(minikube docker-env)`.
      
-9. Build and generate the k8s artifacts, to ensure there are no errors.
+9. Build and generate the k8s artifacts to ensure there are no errors.
     
     ```bash
     $ ballerina build recommendationservice_ballerina
@@ -260,7 +258,7 @@ logic in ballerina. Refer to the original source code to get an understanding of
 
 10. Once you’ve completed a service, update the start.sh file to use the Ballerina implementation of that service. You can replace the current command for the particular service with the Ballerina commands for them instead.
 
-    e.g.,
+    For example:
     ```bash
     kubectl apply -f  $DEMO_HOME/kubernetes-manifests/recommendationservice.yaml
     
